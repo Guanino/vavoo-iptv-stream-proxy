@@ -6,5 +6,8 @@
   },
   "engines": {
     "node": ">=24"
+  },
+  "scripts": {
+    "start": "node index.js --http-host 0.0.0.0 --http-port $PORT"
   }
 }
