@@ -3,10 +3,9 @@ FROM node:24-alpine
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+RUN npm install --production
 
 COPY . .
 
-EXPOSE 8888
-
-CMD ["node", "index.js", "--http-host", "0.0.0.0", "--http-port", "8888"]
+# Wir lassen das Skript dynamisch auf dem Port laufen, den SnapDeploy vorgibt
+CMD ["node", "index.js", "--http-host", "0.0.0.0", "--http-port", "3000"]
